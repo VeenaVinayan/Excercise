@@ -18,7 +18,7 @@ class BinaryTree{
             this.insert(this.root,node);
         }
     }
-insert(node,newNode){
+    insert(node,newNode){
      if(node.left===null){
          node.left=node;
          return;

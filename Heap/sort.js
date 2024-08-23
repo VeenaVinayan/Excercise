@@ -1,16 +1,17 @@
+//Descending Order Sort
 function heapify(arr, n, i) {
-    let largest = i;          
+    let smallest = i;          
     let left = 2 * i + 1;     
     let right = 2 * i + 2;   
-    if (left < n && arr[left] > arr[largest]) {
-        largest = left;
+    if (left < n && arr[left] < arr[smallest]) {
+        smallest = left;
     }
-    if (right < n && arr[right] > arr[largest]) {
-        largest = right;
+    if (right < n && arr[right] < arr[smallest]) {
+        smallest = right;
     }
-    if (largest !== i) {
-        [arr[i], arr[largest]] = [arr[largest], arr[i]]; 
-        heapify(arr, n, largest);
+    if (smallest !== i) {
+        [arr[i], arr[smallest]] = [arr[smallest], arr[i]]; 
+        heapify(arr, n, smallest);
     }
 }
 
